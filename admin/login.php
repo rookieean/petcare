@@ -123,11 +123,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <a href="../index.php" style="color: var(--primary-color);">← Kembali ke Website</a>
             </div>
             
-            <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--gray-light); text-align: center; color: var(--gray); font-size: 0.9rem;">
-                <p><strong>Demo Login:</strong></p>
-                <p>Username: admin</p>
-                <p>Password: admin123</p>
-            </div>
         </div>
     </div>
 </body>

@@ -30,13 +30,23 @@ $current_page = 'beranda';
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Kesehatan Hewan Peliharaan Anda, Prioritas Kami</h1>
-            <p>Layanan kesehatan profesional untuk hewan kesayangan Anda dengan dokter berpengalaman dan fasilitas modern</p>
-            <a href="booking.php" class="btn btn-primary">Booking Sekarang</a>
-        </div>
-    </section>
+        <section class="hero">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                    <!-- Text Side -->
+                    <div class="hero-content">
+                        <h1>Kesehatan Hewan Peliharaan Anda, Prioritas Kami</h1>
+                        <p>Layanan kesehatan profesional untuk hewan kesayangan Anda dengan dokter berpengalaman dan fasilitas modern</p>
+                        <a href="booking.php" class="btn btn-primary">Booking Sekarang</a>
+                    </div>
+                    
+                    <!-- Image Side -->
+                    <div style="text-align: center;">
+                        <img src="images/a-dog.jpg" alt="Pet Care" style="max-width: 100%; height: auto; filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));">
+                    </div>
+                </div>
+            </div>
+        </section>
 
     <!-- Features Section -->
     <section class="features">
