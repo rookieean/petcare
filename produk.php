@@ -61,9 +61,26 @@ $conn->close();
                         <div class="product-card">
                             <div class="product-image">
                                 <?php 
-                                $icons = ['💉', '🏥', '✂️', '💊', '🩺'];
-                                echo $icons[array_rand($icons)];
+                                // Generate image filename based on product name
+                                $image_filename = strtolower(str_replace(' ', '-', $product['name'])) . '.jpg';
+                                $image_path = 'images/products/' . $image_filename;
+                                
+                                if (file_exists($image_path)): 
                                 ?>
+                                    <img src="<?php echo $image_path; ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
+                                <?php else: ?>
+                                    <?php 
+                                    // Icon placeholder based on category
+                                    $icons = [
+                                        'Vaksinasi' => '💉',
+                                        'Pemeriksaan' => '🩺',
+                                        'Perawatan' => '✂️',
+                                        'Operasi' => '🏥'
+                                    ];
+                                    $icon = isset($icons[$product['category']]) ? $icons[$product['category']] : '🐾';
+                                    ?>
+                                    <div class="product-image-placeholder"><?php echo $icon; ?></div>
+                                <?php endif; ?>
                             </div>
                             <div class="product-info">
                                 <div class="product-category"><?php echo htmlspecialchars($product['category']); ?></div>

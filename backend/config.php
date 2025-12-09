@@ -5,16 +5,16 @@
 // Database credentials
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
-define('DB_PASS', ''); // Kosongkan jika tidak ada password
+define('DB_PASS', '');
 define('DB_NAME', 'petcare_health');
 
 // Site configuration
 define('SITE_URL', 'http://localhost/petcare');
 define('SITE_NAME', 'Pet Care Health');
 
-// Admin notification (ganti dengan nomor WhatsApp admin)
-define('ADMIN_PHONE', '6281953905617'); // Format: 62xxxxx
-define('ADMIN_EMAIL', 'devanderlebanon@gmail.com');
+// Admin notification
+define('ADMIN_PHONE', '6281234567890');
+define('ADMIN_EMAIL', 'admin@petcare.com');
 
 // Fungsi koneksi database
 function getDBConnection() {
@@ -28,10 +28,8 @@ function getDBConnection() {
     return $conn;
 }
 
-// Fungsi untuk mengirim notifikasi WhatsApp (menggunakan API)
+// Fungsi untuk mengirim notifikasi WhatsApp
 function sendWhatsAppNotification($phone, $message) {
-    // Anda bisa menggunakan API seperti Fonnte, Wablas, atau sejenisnya
-    // Contoh sederhana redirect ke WhatsApp Web
     $whatsapp_url = "https://wa.me/" . $phone . "?text=" . urlencode($message);
     return $whatsapp_url;
 }
@@ -69,7 +67,7 @@ function formatTanggalIndo($tanggal) {
     return $pecahkan[2] . ' ' . $bulan[(int)$pecahkan[1]] . ' ' . $pecahkan[0];
 }
 
-// Start session jika belum
+// Start session
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }

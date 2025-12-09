@@ -46,7 +46,19 @@ $conn->close();
                 <?php if ($result->num_rows > 0): ?>
                     <?php while($post = $result->fetch_assoc()): ?>
                         <div class="blog-card">
-                            <div class="blog-image">📝</div>
+                            <div class="blog-image">
+                                <?php 
+                                // Generate image filename based on slug
+                                $image_filename = $post['slug'] . '.jpg';
+                                $image_path = 'images/blog/' . $image_filename;
+                                
+                                if (file_exists($image_path)): 
+                                ?>
+                                    <img src="<?php echo $image_path; ?>" alt="<?php echo htmlspecialchars($post['title']); ?>">
+                                <?php else: ?>
+                                    <div class="blog-image-placeholder">📝</div>
+                                <?php endif; ?>
+                            </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
                                     <span><?php echo $post['category']; ?></span> • 

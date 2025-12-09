@@ -80,7 +80,7 @@ nav {
 .logo-icon {
     width: 40px;
     height: 40px;
-    background: var(--cream-color);
+    background: var(--secondary-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -377,12 +377,23 @@ nav {
 .blog-image {
     width: 100%;
     height: 220px;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    background: var(--gray-light);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--cream-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-image-placeholder {
     font-size: 3rem;
+    color: var(--primary-color);
 }
 
 .blog-content {
@@ -496,6 +507,83 @@ footer {
     background: #FED7D7;
     color: #742A2A;
     border: 1px solid #F56565;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 4rem 0;
+    background: var(--cream-color);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.testimonial-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(54, 81, 148, 0.15);
+}
+
+.testimonial-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    overflow: hidden;
+    border: 3px solid var(--accent-color);
+}
+
+.testimonial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 2rem;
+}
+
+.testimonial-stars {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-text {
+    color: var(--gray);
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.testimonial-name {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.testimonial-pet {
+    font-size: 0.9rem;
+    color: var(--gray);
 }
 
 /* Responsive */

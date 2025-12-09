@@ -29,7 +29,7 @@ $current_page = 'beranda';
         </nav>
     </header>
 
-    <!-- Hero Section -->
+   <!-- Hero Section -->
         <section class="hero">
             <div class="container">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
@@ -42,7 +42,7 @@ $current_page = 'beranda';
                     
                     <!-- Image Side -->
                     <div style="text-align: center;">
-                        <img src="images/a-dog.jpg" alt="Pet Care" style="max-width: 100%; height: auto; filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));">
+                        <img src="images/medic.jpg" alt="Pet Care" style="max-width: 100%; height: auto; filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));">
                     </div>
                 </div>
             </div>
@@ -56,32 +56,32 @@ $current_page = 'beranda';
                 <div class="feature-card">
                     <div class="feature-icon">👨‍⚕️</div>
                     <h3>Dokter Profesional</h3>
-                    <p>Tim dokter hewan bersertifikat dengan pengalaman lebih dari 10 tahun dalam merawat berbagai jenis hewan peliharaan</p>
+                    <p>Tim dokter hewan bersertifikat dengan pengalaman lebih dari 10 tahun</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🏥</div>
                     <h3>Fasilitas Modern</h3>
-                    <p>Dilengkapi dengan peralatan medis canggih dan ruang perawatan yang bersih serta nyaman untuk hewan Anda</p>
+                    <p>Dilengkapi dengan peralatan medis canggih dan ruang perawatan bersih</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">⏰</div>
                     <h3>Layanan 24/7</h3>
-                    <p>Siap melayani kebutuhan kesehatan hewan peliharaan Anda kapan saja, termasuk layanan darurat</p>
+                    <p>Siap melayani kebutuhan kesehatan hewan peliharaan Anda kapan saja</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">💊</div>
                     <h3>Produk Berkualitas</h3>
-                    <p>Menyediakan vitamin, obat-obatan, dan perlengkapan kesehatan hewan dengan kualitas terjamin</p>
+                    <p>Menyediakan vitamin, obat-obatan, dan perlengkapan kesehatan hewan</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">💰</div>
                     <h3>Harga Terjangkau</h3>
-                    <p>Layanan kesehatan berkualitas dengan harga yang kompetitif dan berbagai paket hemat</p>
+                    <p>Layanan kesehatan berkualitas dengan harga kompetitif</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📱</div>
                     <h3>Booking Online</h3>
-                    <p>Kemudahan booking konsultasi dan perawatan melalui sistem online yang praktis dan cepat</p>
+                    <p>Kemudahan booking konsultasi melalui sistem online yang praktis</p>
                 </div>
             </div>
         </div>
@@ -97,10 +97,23 @@ $current_page = 'beranda';
             $result = $conn->query($sql);
             ?>
             <div class="products-grid">
-                <?php if ($result->num_rows > 0): ?>
-                    <?php while($row = $result->fetch_assoc()): ?>
+                <?php if ($result && $result->num_rows > 0): ?>
+                    <?php 
+                    $service_images = ['service1.jpg', 'service2.jpg', 'service3.jpg'];
+                    $index = 0;
+                    while($row = $result->fetch_assoc()): 
+                    ?>
                         <div class="product-card">
-                            <div class="product-image">🐶</div>
+                            <div class="product-image">
+                                <?php 
+                                $image_path = 'images/services/' . $service_images[$index];
+                                if (file_exists($image_path)): 
+                                ?>
+                                    <img src="<?php echo $image_path; ?>" alt="<?php echo htmlspecialchars($row['name']); ?>">
+                                <?php else: ?>
+                                    <div class="product-image-placeholder">🐶</div>
+                                <?php endif; ?>
+                            </div>
                             <div class="product-info">
                                 <div class="product-category"><?php echo htmlspecialchars($row['category']); ?></div>
                                 <h3><?php echo htmlspecialchars($row['name']); ?></h3>
@@ -109,7 +122,10 @@ $current_page = 'beranda';
                                 <a href="booking.php" class="btn btn-secondary">Book Now</a>
                             </div>
                         </div>
-                    <?php endwhile; ?>
+                    <?php 
+                    $index++;
+                    endwhile; 
+                    ?>
                 <?php else: ?>
                     <p>Belum ada layanan tersedia.</p>
                 <?php endif; ?>
@@ -117,6 +133,61 @@ $current_page = 'beranda';
             </div>
             <div style="text-align: center; margin-top: 2rem;">
                 <a href="produk.php" class="btn btn-outline">Lihat Semua Layanan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Apa Kata Pelanggan Kami</h2>
+            <p style="text-align: center; color: var(--gray); margin-bottom: 2rem;">Kepercayaan dan kepuasan pelanggan adalah prioritas utama kami</p>
+            
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-image">
+                        <?php if (file_exists('images/testimonials/customer1.jpg')): ?>
+                            <img src="images/testimonials/customer1.jpg" alt="Sarah Martinez">
+                        <?php else: ?>
+                            <div class="testimonial-image-placeholder">SM</div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Pelayanan yang sangat profesional! Dokter sangat sabar dan teliti dalam memeriksa kucing saya. Milo sekarang jauh lebih sehat dan aktif. Terima kasih Pet Care Health!"</p>
+                    <h4 class="testimonial-name">Sarah Martinez</h4>
+                    <p class="testimonial-pet">Pemilik Milo (Kucing Persia)</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-image">
+                        <?php if (file_exists('images/testimonials/customer2.jpg')): ?>
+                            <img src="images/testimonials/customer2.jpg" alt="Budi Santoso">
+                        <?php else: ?>
+                            <div class="testimonial-image-placeholder">BS</div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Fasilitas yang bersih dan modern. Grooming untuk anjing saya hasilnya sangat memuaskan. Harga juga terjangkau. Highly recommended!"</p>
+                    <h4 class="testimonial-name">Budi Santoso</h4>
+                    <p class="testimonial-pet">Pemilik Rocky (Golden Retriever)</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-image">
+                        <?php if (file_exists('images/testimonials/customer3.jpg')): ?>
+                            <img src="images/testimonials/customer3.jpg" alt="Diana Putri">
+                        <?php else: ?>
+                            <div class="testimonial-image-placeholder">DP</div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Tim dokter sangat care dan responsif. Vaksinasi berjalan lancar dan kelinci saya tidak stress sama sekali. Pet Care Health memang yang terbaik!"</p>
+                    <h4 class="testimonial-name">Diana Putri</h4>
+                    <p class="testimonial-pet">Pemilik Snowy (Kelinci Anggora)</p>
+                </div>
             </div>
         </div>
     </section>
