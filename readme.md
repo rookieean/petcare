@@ -8,7 +8,7 @@ Sebuah aplikasi booking app untuk seseorang yang memiliki hewan peliharaan seper
 
 - Booking hewan peliharaan secara online
 - Bebas memilih hari booking selama jam operasional
-- Responsive web
+- Responsive
 
 
 ## 🖥️ Tech Stack
@@ -30,15 +30,12 @@ Sebuah aplikasi booking app untuk seseorang yang memiliki hewan peliharaan seper
 "Some this so significant. I realized there's a lotta think to study"
 
 
-<strong>What challenges did you face and how did you overcome them?</strong>
-
-"Challenge? I don't think really meant it. Cz AI help my task completed. It make me have a enough time to finish my another task. Always get to know don't allow AI replace my own brain"
-
-
 ## 📽️ Demo
 
 
-
+<video width="320" height="240" controls>
+  <source src="/video/Pet Care Health - Klinik Hewan Professional - Personal - Microsoft​ Edge 2025-12-10 20-57-48.mp4" type="video/mp4">
+</video>
 
 
 ## 🤗 Support
