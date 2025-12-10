@@ -33,9 +33,11 @@ Sebuah aplikasi booking app untuk seseorang yang memiliki hewan peliharaan seper
 ## 📽️ Demo
 
 
-<video width="320" height="240" controls>
-  <source src="https://www.awesomescreenshot.com/video/47320535?key=c8288b19d118a90187c95da99852f47d" type="video/mp4">
-</video>
+
+
+https://github.com/user-attachments/assets/b8eceb48-a162-4408-b554-9753e9fac3c6
+
+
 
 
 ## 🤗 Support
