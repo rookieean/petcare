@@ -1,7 +1,7 @@
 
 # 🐶 Pet Care
 
-Sebuah aplikasi booking app untuk seseorang yang memiliki hewan peliharaan seperti anjing, kucing, dan hamster, lalu ingin memesan perawatan hewan untuk kesayangan mereka, agar menjaganya tetap sehat dan sentosa.
+Sebuah aplikasi booking app untuk seseorang yang memiliki hewan peliharaan seperti anjing, kucing, dan hamster, lalu ingin memesan perawatan hewan atau untuk melihat fasilitas yang bisa ditawarkan.
 
 
 ## 🎏 Features
@@ -13,7 +13,7 @@ Sebuah aplikasi booking app untuk seseorang yang memiliki hewan peliharaan seper
 ## 🧐 Feedback
 
 - Not provide account online, it might allow attackers to stole data or to inject script
-- Admin page can't CRUD ( Change booking status )
+- Admin page can't CRUD ( Change booking status, etc )
 - There's no history booking for each customer
 - The Doctor and customer can't see the booking schedule, ( no page for it )
 
@@ -34,7 +34,7 @@ Sebuah aplikasi booking app untuk seseorang yang memiliki hewan peliharaan seper
 
 <strong>What did you learn while building this project? </strong>
 
-"Some this so significant. I realized there's a lotta think to study"
+"Some this so significant. I realized there's a lot things to study"
 
 
 ## 📽️ Demo
