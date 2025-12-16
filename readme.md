@@ -8,7 +8,14 @@ Sebuah aplikasi booking app untuk seseorang yang memiliki hewan peliharaan seper
 
 - Booking hewan peliharaan secara online
 - Bebas memilih hari booking selama jam operasional
-- Responsive
+- Responsive page
+
+## 🧐 Feedback
+
+- Not provide account online, it might allow attackers to stole data or to inject script
+- Admin page can't CRUD ( Change booking status )
+- There's no history booking for each customer
+- The Doctor and customer can't see the booking schedule, ( no page for it )
 
 
 ## 🖥️ Tech Stack
@@ -31,8 +38,6 @@ Sebuah aplikasi booking app untuk seseorang yang memiliki hewan peliharaan seper
 
 
 ## 📽️ Demo
-
-
 
 
 https://github.com/user-attachments/assets/b8eceb48-a162-4408-b554-9753e9fac3c6
